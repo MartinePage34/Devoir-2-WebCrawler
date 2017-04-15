@@ -110,10 +110,10 @@ div:first-of-type {
 <script>
 function shuffleEvents(events) {
 	for (var i = 0; i < events["evenement"].length; i++) {
-		// Trouve un nombre aléatoire entre 0 et la taille du tableau (inclusivement)
+	
 		var index = Math.floor(Math.random() * events["evenement"].length);
 		
-		// Échange l'élément à l'indice actuelle (i) avec l'élément qui se trouve à la nouvelle indice (index)
+	
 		var event = events["evenement"][i]; 
 		events["evenement"][i] =  events["evenement"][index];
 		events["evenement"][index] = event;
@@ -166,25 +166,7 @@ var data={"evenement":[
 shuffleEvents(data);
 
     
-    
-    
-/*    backup
-    
-var output="<ul>";
 
-// for (var i in data.evenement) {
-
-// Ce type de boucle perment de limiter le nombre d'éléments affichés (max 3)
-for (var i = 0; i < 3; i++) {
-    output+="<li>" + data.evenement[i].nom + " " + data.evenement[i].dates + " " + "<a href=" + data.evenement[i].siteWeb + ">" + data.evenement[i].siteWeb + "</a>" + " " + "<img src=" + data.evenement[i].image + ">" + "</li>";
-}
-
-output+="</ul>";
-    
-*/  
-    
-
-    
     
     
     
