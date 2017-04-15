@@ -113,7 +113,7 @@ function shuffleEvents(events) {
 	
 		var index = Math.floor(Math.random() * events["evenement"].length);
 		
-	
+		
 		var event = events["evenement"][i]; 
 		events["evenement"][i] =  events["evenement"][index];
 		events["evenement"][index] = event;
@@ -162,19 +162,13 @@ var data={"evenement":[
         },
 ]}
 
-// Utilise la fonction pour mélanger le tableau d'événements
+
 shuffleEvents(data);
 
-    
 
-    
-    
-    
 var output="<div>";
 
-// for (var i in data.evenement) {
 
-// Ce type de boucle perment de limiter le nombre d'éléments affichés (max 3)
 for (var i = 0; i < 3; i++) {
    
     
