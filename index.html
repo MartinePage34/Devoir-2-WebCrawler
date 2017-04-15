@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="blah.css">
+</head>
+<style>
+
+    
+body{
+    
+    background-color: #d1a481;
+    background-image: url("/images/bgTexture.png");
+    background-repeat:repeat;
+    font-family: arial;
+    
+    color:#121212;  
+    
+}
+    
+.button {
+    margin-right:200px;
+    float:right;
+    margin-bottom:50px;
+    background-color: #ffffff; 
+    border: none;
+    color: #222222;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+    
+    .button:hover{
+        color:white;
+        font-weight: bold;
+        background-color:#00394e;
+    }
+    
+    h1{
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 75px;
+        color:white;
+        font-family: arial;
+    }
+  
+    
+    .image{
+        position:absolute;
+        text-align: center;
+    }
+    
+ 
+    img{
+        opacity:1;
+        width:100%;
+    }
+    
+    img:hover {
+        opacity:0.6;
+    }
+
+  
+    
+    div:first-of-type  {
+        width: 600px;
+        background-color: white;
+        text-align: center;
+        
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin-bottom: 45px !important;
+        margin: auto;
+        
+    }
+
+
+div:only-child {
+        text-align: center;
+    }    padding: 10px 20px;
+
+div:first-of-type {
+    
+     box-shadow:none !important;
+}
+
+    
+    
+    
+</style>
+    
+<body>
+
+<h1>Exposition de la région de Gatineau/Ottawa</h1>
+
+    
+
+<a href="index.html"> <span class="button">Refresh!</span> </a>
+    
+    
+ 
+<div id="miseAJours"></div>
+
+
+
+
+    
+<script>
+function shuffleEvents(events) {
+	for (var i = 0; i < events["evenement"].length; i++) {
+		// Trouve un nombre aléatoire entre 0 et la taille du tableau (inclusivement)
+		var index = Math.floor(Math.random() * events["evenement"].length);
+		
+		// Échange l'élément à l'indice actuelle (i) avec l'élément qui se trouve à la nouvelle indice (index)
+		var event = events["evenement"][i]; 
+		events["evenement"][i] =  events["evenement"][index];
+		events["evenement"][index] = event;
+	}
+}
+
+var data={"evenement":[
+        {
+            "nom":"Alex Janvier - Musée des beaux-arts",
+            "dates":"Jusqu'au 17 avril 2017",
+            "siteWeb":"http://www.beaux-arts.ca/janvier/fr/",
+            "image":"images/AlexJanvier.png"
+        },
+        {
+            "nom":"Nanotechnologies : l'invisible révolution - Musée de la civilisation",
+            "dates":"Jusqu'au 15 oct 2017",
+            "siteWeb":"https://www.mcq.org/fr/exposition?id=333953",
+            "image":"images/Nanotech.png"
+        },
+    
+        {
+            "nom":"Comme chiens et chats - Musée de la civilisation",
+            "dates":"Jusqu'au 4 sept 2017",
+            "siteWeb":"https://www.mcq.org/fr/exposition?id=375906",
+            "image":"images/CommeChiensChats.png"
+        },
+		
+        {
+            "nom":"Galerie de l'Arctique Canada Goose",
+            "dates":"Ouverture le 21 juin!",
+            "siteWeb":"https://nature.ca/fr/planifiez-votre-visite/voir-faire-musee/expositions/galerie-larctique",
+            "image":"images/MuseeDeLaNature.jpg"
+        },
+        {
+            "nom":"AXENÉO7",
+            "dates":"Jusqu'au 28 mai 2017",
+            "siteWeb":"http://www.axeneo7.qc.ca/event.php?lg=fr&id=226",
+            "image":"images/AxeNo7.jpg"
+        },
+    
+        {
+            "nom":"Gallerie 101",
+            "dates":"Jusqu'au 13 avril 2017",
+            "siteWeb":"http://www.gallery101.org/fr/exhibits/soft-and-pliable-will-defeat-hard-and-strong",
+            "image":"images/gallerie101.jpg"
+        },
+]}
+
+// Utilise la fonction pour mélanger le tableau d'événements
+shuffleEvents(data);
+
+    
+    
+    
+/*    backup
+    
+var output="<ul>";
+
+// for (var i in data.evenement) {
+
+// Ce type de boucle perment de limiter le nombre d'éléments affichés (max 3)
+for (var i = 0; i < 3; i++) {
+    output+="<li>" + data.evenement[i].nom + " " + data.evenement[i].dates + " " + "<a href=" + data.evenement[i].siteWeb + ">" + data.evenement[i].siteWeb + "</a>" + " " + "<img src=" + data.evenement[i].image + ">" + "</li>";
+}
+
+output+="</ul>";
+    
+*/  
+    
+
+    
+    
+    
+    
+var output="<div>";
+
+// for (var i in data.evenement) {
+
+// Ce type de boucle perment de limiter le nombre d'éléments affichés (max 3)
+for (var i = 0; i < 3; i++) {
+   
+    
+    output+="<a href=" + data.evenement[i].siteWeb + ">" + "<img src=" + data.evenement[i].image + ">" + "</a>" + "<div>" + " " + "<p>" + data.evenement[i].nom + "</p>" + "<p>" + data.evenement[i].dates + "</p>" + "</div>" + "</div>";
+        
+}
+
+output+="</div>";
+      
+    
+    
+document.getElementById("miseAJours").innerHTML=output;
+</script>
+
+    
+    
+    
+    
+</body>
+</html>
