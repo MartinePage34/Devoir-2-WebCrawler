@@ -1,7 +1,7 @@
 {
   "name": "simple-webcrawler-javascript",
   "version": "0.0.0",
-  "description": "A simple webcrawler written in JavaScript",
+  "description": "Web crawler in js",
   "main": "crawler.js",
   "author": "Martine",
   "license": "ISC",
